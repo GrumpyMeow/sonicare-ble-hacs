@@ -1,3 +1,4 @@
 {
-    "name": "Sonicare BLE"
+    "name": "Sonicare BLE",
+    "render_readme": true
 }
