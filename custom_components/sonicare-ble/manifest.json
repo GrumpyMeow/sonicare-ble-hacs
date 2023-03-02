@@ -10,7 +10,7 @@
       }
     ],
     "requirements": [
-        "sonicare-bletb==0.0.0"
+        "sonicare-bletb==0.0.2"
     ],
     "dependencies": [
       "bluetooth_adapters"
