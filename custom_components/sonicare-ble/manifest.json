@@ -1,6 +1,7 @@
 {
-    "domain": "sonicare-ble",
     "name": "Sonicare-ble",
+    "domain": "sonicare-ble",
+    "version": "0.0.0",
     "config_flow": true,
     "documentation": "https://www.home-assistant.io/integrations/sonicare-ble",
     "bluetooth": [
