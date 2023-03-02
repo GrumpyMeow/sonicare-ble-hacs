@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import logging
 
-from sonicare_ble import SonicareBluetoothDeviceData
+from sonicare_bletb import SonicareBluetoothDeviceData
 
 from homeassistant.components.bluetooth import (
     BluetoothScanningMode,
