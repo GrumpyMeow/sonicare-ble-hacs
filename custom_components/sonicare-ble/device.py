@@ -1,7 +1,7 @@
 """Support for Sonicare BLE devices."""
 from __future__ import annotations
 
-from sonicare_ble import DeviceKey
+from sonicare_bletb import DeviceKey
 
 from homeassistant.components.bluetooth.passive_update_processor import (
     PassiveBluetoothEntityKey,

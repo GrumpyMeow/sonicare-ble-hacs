@@ -1,7 +1,7 @@
 """Support for Sonicare BLE sensors."""
 from __future__ import annotations
 
-from sonicare_ble import SonicareSensor, SensorUpdate
+from sonicare_bletb import SonicareSensor, SensorUpdate
 
 from homeassistant import config_entries
 from homeassistant.components.bluetooth.active_update_processor import (

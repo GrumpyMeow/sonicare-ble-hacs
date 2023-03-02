@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from sonicare_ble import SonicareBluetoothDeviceData as DeviceData
+from sonicare_bletb import SonicareBluetoothDeviceData as DeviceData
 import voluptuous as vol
 
 from homeassistant.components.bluetooth import (
