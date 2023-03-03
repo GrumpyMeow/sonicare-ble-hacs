@@ -26,12 +26,11 @@ from homeassistant.const import (
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity import EntityCategory
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
+import logging
 from homeassistant.helpers.sensor import sensor_device_info_to_hass_device_info
 
 from .const import DOMAIN
 from .device import device_key_to_bluetooth_entity_key
-
-import logging
 
 _LOGGER = logging.getLogger(__name__)
 
