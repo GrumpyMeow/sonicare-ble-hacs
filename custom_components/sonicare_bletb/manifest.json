@@ -4,9 +4,6 @@
   "version": "0.0.1",
   "bluetooth": [
     {
-      "manufacturer_id": 477
-    },
-    {
       "service_uuid": "477ea600-a260-11e4-ae37-0002a5d50001"
     },
     {
