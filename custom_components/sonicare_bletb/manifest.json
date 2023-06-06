@@ -5,6 +5,12 @@
   "bluetooth": [
     {
       "manufacturer_id": 477
+    },
+    {
+      "service_uuid": "477ea600-a260-11e4-ae37-0002a5d50001"
+    },
+    {
+      "local_name": "Philips Sonicare"
     }
   ],
   "codeowners": ["@GrumpyMeow"],
