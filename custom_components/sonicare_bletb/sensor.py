@@ -7,6 +7,7 @@ from homeassistant.components.sensor import (
     SensorEntityDescription,
     SensorStateClass,
 )
+from homeassistant.helpers.restore_state import RestoreEntity
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.const import PERCENTAGE, UnitOfTime
 from homeassistant.core import HomeAssistant, callback
@@ -148,7 +149,7 @@ async def async_setup_entry(
     )
 
 
-class SonicareBLETBSensor(CoordinatorEntity[SonicareBLETBCoordinator], SensorEntity):
+class SonicareBLETBSensor(CoordinatorEntity[SonicareBLETBCoordinator], SensorEntity, RestoreEntity):
     """Generic sensor for SonicareBLETB."""
 
     def __init__(
@@ -169,7 +170,12 @@ class SonicareBLETBSensor(CoordinatorEntity[SonicareBLETBCoordinator], SensorEnt
             name=name,
             connections={(dr.CONNECTION_BLUETOOTH, device.address)},
         )
-        self._attr_native_value = getattr(self._device, self._key)
+
+    async def async_added_to_hass(self) -> None:
+        await super().async_added_to_hass()
+        if not(last_state := await self.async_get_last_state()):
+            return
+        self._attr_native_value = last_state.state
 
     @callback
     def _handle_coordinator_update(self) -> None:
@@ -180,4 +186,12 @@ class SonicareBLETBSensor(CoordinatorEntity[SonicareBLETBCoordinator], SensorEnt
     @property
     def available(self) -> bool:
         """Unavailable if coordinator isn't connected."""
-        return self._coordinator.connected and super().available
+        return True
+
+    @property
+    def assumed_state(self) -> bool:
+        return not self._coordinator.connected
+
+    @property
+    def native_value(self) -> str | int | None:
+        return getattr(self._device, self._key)
