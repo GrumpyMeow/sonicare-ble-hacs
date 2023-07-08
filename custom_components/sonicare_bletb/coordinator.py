@@ -25,7 +25,7 @@ class SonicareBLETBCoordinator(DataUpdateCoordinator[None]):
         self._sonicare_ble = sonicare_ble
         sonicare_ble.register_callback(self._async_handle_update)
         sonicare_ble.register_disconnected_callback(self._async_handle_disconnect)
-        self.connected = False
+        self.connected = True
 
     @callback
     def _async_handle_update(self, state: SonicareBLETBState) -> None:
