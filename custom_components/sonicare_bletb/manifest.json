@@ -19,5 +19,5 @@
   "documentation": "https://www.home-assistant.io/integrations/sonicare_bletb/",
   "integration_type": "device",
   "iot_class": "local_push",
-  "requirements": ["bluetooth-data-tools==1.3.0", "sonicare-bletb==0.0.8"]
+  "requirements": ["sonicare-bletb==0.0.8"]
 }
